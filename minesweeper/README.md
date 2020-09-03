@@ -35,7 +35,7 @@ Or(A, B, C, D, E, F, G, H)
 
 But we actually know more than what this expression says. The above logical sentence expresses the idea that at least one of those eight variables is true. But we can make a stronger statement than that: we know that **exactly** one of the eight variables is true. This gives us a propositional logic sentence like the below.
 
-`
+```
 Or(
     And(A, Not(B), Not(C), Not(D), Not(E), Not(F), Not(G), Not(H)),
     And(Not(A), B, Not(C), Not(D), Not(E), Not(F), Not(G), Not(H)),
@@ -46,7 +46,7 @@ Or(
     And(Not(A), Not(B), Not(C), Not(D), Not(E), Not(F), G, Not(H)),
     And(Not(A), Not(B), Not(C), Not(D), Not(E), Not(F), Not(G), H)
 )
-`
+```
 
 That’s quite a complicated expression! And that’s just to express what it means for a cell to have a `1` in it. If a cell has a `2` or `3` or some other value, the expression could be even longer.
 

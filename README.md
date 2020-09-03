@@ -2,8 +2,6 @@
 
 **Course Summary**
 
-https://cs50.harvard.edu/ai/
-
 This course explores the concepts and algorithms at the foundation of modern artificial intelligence, diving into the ideas that give rise to technologies like game-playing engines, handwriting recognition, and machine translation. Through hands-on projects, students gain exposure to the theory behind graph search algorithms, classification, optimization, reinforcement learning, and other topics in artificial intelligence and machine learning as they incorporate them into their own Python programs. By course’s end, students emerge with experience in libraries for machine learning as well as knowledge of artificial intelligence principles that enable them to design intelligent systems of their own.
 
 ## Course Projects
@@ -22,3 +20,5 @@ This course explores the concepts and algorithms at the foundation of modern art
 | 5    | Neural Networks  | [Traffic](traffic)         | Neural net to identify which traffic sign appears in a photograph  | `$ python traffic.py gtsrb`                                           | [Link](https://youtu.be/HNih1yV5OI0)    |
 | 6    | Language         | [Parser](parser)           | Parse sentences and extract noun phrases                           | `$ python parser.py`                                                  | [Link](https://youtu.be/enDILgpR_Ug)    |
 | 6    | Language         | [Questions](questions)     | AI to answer questions given corpus of text                        | `$ python questions.py corpus`                                        | [Link](https://youtu.be/v2KMyxX73gY)    |
+
+https://cs50.harvard.edu/ai/

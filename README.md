@@ -1,1 +1,1 @@
-# HarvardEdX-CS50s-Intro-to-AI
+# HarvardEdX CS50s Introduction to Artificial Intelligence with Python

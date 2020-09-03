@@ -70,6 +70,26 @@ Using the knowledge from the lower-left number, we could construct the sentence 
 
 Similarly, consider the game below.
 
+![infer_mines](https://user-images.githubusercontent.com/59327790/92054993-10488000-ed43-11ea-9fbe-1061861589fc.png)
+
+Our AI would construct the sentence `{E, F, H} = 3`. Intuitively, we can infer that all of E, F, and H are mines. More generally, any time the number of `cells` is equal to the `count`, we know that all of that sentence’s `cells` must be mines.
+
+In general, we’ll only want our sentences to be about `cells` that are not yet known to be either safe or mines. This means that, once we know whether a cell is a mine or not, we can update our sentences to simplify them and potentially draw new conclusions.
+
+For example, if our AI knew the sentence `{A, B, C} = 2`, we don’t yet have enough information to conclude anything. But if we were told that C were safe, we could remove C from the sentence altogether, leaving us with the sentence `{A, B} = 2` (which, incidentally, does let us draw some new conclusions.)
+
+Likewise, if our AI knew the sentence `{A, B, C} = 2`, and we were told that C is a mine, we could remove `C` from the sentence and decrease the value of `count` (since C was a mine that contributed to that count), giving us the sentence `{A, B} = 1`. This is logical: if two out of A, B, and C are mines, and we know that C is a mine, then it must be the case that out of A and B, exactly one of them is a mine.
+
+If we’re being even more clever, there’s one final type of inference we can do.
+
+![subset_inference](https://user-images.githubusercontent.com/59327790/92055796-4a198680-ed43-11ea-9fc3-f16be1fcf082.png)
+
+Consider just the two sentences our AI would know based on the top middle cell and the bottom middle cell. From the top middle cell, we have `{A, B, C} = 1`. From the bottom middle cell, we have `{A, B, C, D, E} = 2`. Logically, we could then infer a new piece of knowledge, that `{D, E} = 1`. After all, if two of A, B, C, D, and E are `mines`, and only one of A, B, and C are mines, then it stands to reason that exactly one of D and E must be the other mine.
+
+More generally, any time we have two sentences `set1 = count1` and `set2 = count2` where `set1` is a subset of `set2`, then we can construct the new sentence `set2 - set1 = count2 - count1`. Consider the example above to ensure you understand why that’s true.
+
+So using this method of representing knowledge, we can write an AI agent that can gather knowledge about the Minesweeper board, and hopefully select cells it knows to be safe!
+
 ## Project Specification
 
 Complete the implementations of the `Sentence` class and the `MinesweeperAI` class in `minesweeper.py`.

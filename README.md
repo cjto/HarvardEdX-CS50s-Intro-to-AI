@@ -1,4 +1,4 @@
-# HarvardEdX CS50s Introduction to Artificial Intelligence with Python
+# HarvardEdX - CS50's Introduction to Artificial Intelligence with Python
 
 **Course Summary**
 
